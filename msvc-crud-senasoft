@@ -1,15 +1,9 @@
-
-
 server:
   port: ${SERVER_PORT}
 
 spring:
   application:
-    name: msvc-users
-  aws:
-    region: ${AWS_REGION}
-    bucket-name: ${AWS_S3_BUCKET_NAME}
-    base_url: ${AWS_S3_BASE_URL}
+    name: msvc-crud-senasoft
   datasource:
     driver-class-name: org.postgresql.Driver
     url: ${DB_URL}
