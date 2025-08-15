@@ -1,36 +1,29 @@
-server:
-  port: ${SERVER_PORT}
-
 spring:
-  application:
-    name: msvc-gateway
-  jwt:
-    expiration: ${JWT_EXPIRATION}
-    secret: ${JWT_SECRET}
   cloud:
     gateway:
-      globalcors:
-        corsConfigurations:
-          '[/**]':
-            allowedOrigins: ${ALLOWED_ORIGINS}
-            allowedMethods:
-              - GET
-              - POST
-              - PUT
-              - DELETE
-              - OPTIONS
-            allowedHeaders: '*'
-            allowCredentials: true
-            maxAge: 3600
-      routes:
-        - id: auth
-          uri: lb://msvc-auth
-          predicates:
-            - Path=/api/v1/auth/**       
-        - id: users
-          uri: lb://msvc-users
-          predicates:
-            - Path=/api/v1/profile/**
-          filters:
-            - AuthFilter
-       
+      server:
+        webflux:
+          globalcors:
+            cors-configurations:
+              '[/**]':
+                allowedOrigins: ${ALLOWED_ORIGINS}
+                allowedMethods:
+                  - GET
+                  - POST
+                  - PUT
+                  - DELETE
+                  - OPTIONS
+                allowedHeaders: '*'
+                allowCredentials: true
+                maxAge: 3600
+          routes:
+            - id: auth
+              uri: lb://msvc-auth
+              predicates:
+                - Path=/api/v1/auth/**
+            - id: users
+              uri: lb://msvc-users
+              predicates:
+                - Path=/api/v1/profile/**
+              filters:
+                - AuthFilter
