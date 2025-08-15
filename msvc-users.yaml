@@ -5,6 +5,8 @@ server:
 spring:
   application:
     name: msvc-users
+  aws:
+    region: a
   datasource:
     driver-class-name: org.postgresql.Driver
     url: ${DB_URL}
@@ -26,6 +28,7 @@ spring:
   devtools:
     restart:
       enabled: false
+
 
 
 
