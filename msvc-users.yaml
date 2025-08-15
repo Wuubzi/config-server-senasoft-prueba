@@ -6,7 +6,9 @@ spring:
   application:
     name: msvc-users
   aws:
-    region: a
+    region: ${AWS_REGION}
+    bucket-name: ${AWS_S3_BUCKET_NAME}
+    base_url: ${AWS_S3_BASE_URL}
   datasource:
     driver-class-name: org.postgresql.Driver
     url: ${DB_URL}
@@ -28,6 +30,7 @@ spring:
   devtools:
     restart:
       enabled: false
+
 
 
 
