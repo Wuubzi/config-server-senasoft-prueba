@@ -1,0 +1,15 @@
+server:
+  port: ${SERVER_PORT}
+spring:
+  application:
+    name: msvc-eureka
+eureka:
+  instance:
+    hostname: ${EUREKA_HOST}
+  client:
+    fetchRegistry: 'false'
+    registerWithEureka: 'false'
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    renewal-percent-threshold: 0.85
