@@ -17,7 +17,7 @@ spring:
     port: ${REDIS_PORT}
  jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
  rabbitmq:
