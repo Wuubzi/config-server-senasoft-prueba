@@ -23,4 +23,10 @@ spring:
     port: ${RABBIT_PORT}
     username: ${RABBIT_USER}
     password: ${RABBIT_PASSWORD}
+spring:
+  devtools:
+    restart:
+      enabled: false
+
+
 
