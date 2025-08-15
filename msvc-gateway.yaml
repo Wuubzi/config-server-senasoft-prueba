@@ -1,4 +1,12 @@
+server:
+  port: ${SERVER_PORT}
+
 spring:
+  application:
+    name: msvc-gateway
+  jwt:
+    expiration: ${JWT_EXPIRATION}
+    secret: ${JWT_SECRET}
   cloud:
     gateway:
       server:
